@@ -1,4 +1,4 @@
-FROM openjdk:11 as build
+FROM eclipse-temurin:11-jdk AS build
 
 WORKDIR /workspace/app
 
@@ -9,7 +9,7 @@ COPY src src
 
 RUN SSL_ENABLED="false" ./mvnw package
 
-FROM openjdk:11
+FROM eclipse-temurin:11-jre
 
 ARG WAR_FILE=/workspace/app/target/*.jar
 
