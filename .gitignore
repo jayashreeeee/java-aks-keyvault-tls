@@ -39,3 +39,10 @@ build/
 *.pfx
 my.yml
 
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
