@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-demo
+  template:
+    metadata:
+      labels:
+        app: java-demo
+    spec:
+      containers:
+        - name: java-demo
+          image: jayashreeacr2026.azurecr.io/java-demo:IMAGE_TAG
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SSL_ENABLED
+              value: "false"
